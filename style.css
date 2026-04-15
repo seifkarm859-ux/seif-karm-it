@@ -469,3 +469,25 @@ footer {
         font-size: 2rem;
     }
 }
+/* الكود ده هيجبر الأزرار تفضل جنب بعض وعلى اليمين في كل الشاشات */
+
+.buttons {
+    display: flex !important;
+    flex-direction: row !important; /* يمنع التراص الرأسي */
+    justify-content: flex-start !important; /* يضمن البداية من اليمين */
+    gap: 10px !important;
+    flex-wrap: nowrap !important; /* القفل اللي بيمنعهم ينزلوا تحت بعض */
+    width: 100%;
+}
+
+.hero {
+    text-align: right !important; /* محاذاة النص لليمين */
+}
+
+@media (max-width: 768px) {
+    .btn {
+        padding: 0.6rem 1rem !important; /* تصغير الحجم شوية عشان مساحة الموبايل */
+        font-size: 0.9rem !important;
+        white-space: nowrap !important; /* يمنع النص داخل الزرار يتقسم على سطرين */
+    }
+}
