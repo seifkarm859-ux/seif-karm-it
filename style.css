@@ -433,13 +433,7 @@ footer {
 }
 
    /* الكود العام (للديكستوب والموبايل) */
-.buttons {
-    display: flex;
-    flex-direction: row; /* يخليهم جنب بعض */
-    justify-content: flex-start; /* يخليهم يبدأوا من اليمين لأن الصفحة RTL */
-    gap: 1rem;
-    flex-wrap: wrap; /* عشان لو الموبايل صغير جداً ينزلوا تحت بعض بدل ما يخرجوا بره الشاشة */
-}
+
 
 /* تعديل الميديا كويري للموبايل */
 @media (max-width: 768px) {
@@ -447,16 +441,7 @@ footer {
         text-align: right; /* التأكد من محاذاة النص لليمين */
     }
 
-    .buttons {
-        justify-content: flex-start !important; /* إجبار المحاذاة لليمين */
-        flex-direction: row; /* التأكد إنهم مش فوق بعض */
-        padding: 0;
-    }
-
-    .btn {
-        margin: 0; /* حذف أي هوامش قديمة */
-        width: auto; /* الزرار ياخد مساحته بس مش عرض الشاشة كله */
-    }
+  
 }
 
     th,
@@ -469,26 +454,4 @@ footer {
         font-size: 2rem;
     }
 }
-/* الكود ده هيجبر الأزرار تفضل جنب بعض وعلى اليمين في كل الشاشات */
-/* الكود ده هيجبر الأزرار تفضل جنب بعض وعلى اليمين في كل الشاشات */
 
-.buttons {
-    display: flex !important;
-    flex-direction: row !important; /* يمنع التراص الرأسي */
-    justify-content: flex-start !important; /* يضمن البداية من اليمين */
-    gap: 10px !important;
-    flex-wrap: nowrap !important; /* القفل اللي بيمنعهم ينزلوا تحت بعض */
-    width: 100%;
-}
-
-.hero {
-    text-align: right !important; /* محاذاة النص لليمين */
-}
-
-@media (max-width: 768px) {
-    .btn {
-        padding: 0.6rem 1rem !important; /* تصغير الحجم شوية عشان مساحة الموبايل */
-        font-size: 0.9rem !important;
-        white-space: nowrap !important; /* يمنع النص داخل الزرار يتقسم على سطرين */
-    }
-}
