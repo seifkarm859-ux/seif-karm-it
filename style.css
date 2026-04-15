@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-image: url("./img/Gemini_Generated_Image_k5ew32k5ew32k5ew.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    /* ضروري لأجهزة الآيفون */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(3, 60, 248, 0.984);
+
+    position: -webkit-sticky;
+    /* ضروري لمتصفحات سفاري القديمة */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    /* لضمان أخذ العرض بالكامل وعدم الانكماش */
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    background: #732134;
+    color: rgb(205, 51, 51);
+    transform: translateY(-2px);
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 1rem;
+        /* تقليل الحواف الجانبية في الموبايل */
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background: transparent;
+        position: static;
+        padding: 0;
+        box-shadow: none;
+
+        width: 100%;
+        overflow-x: auto;
+        /* يسمح بالتمرير الجانبي إذا كانت الروابط كثيرة */
+        -webkit-overflow-scrolling: touch;
+        /* تمرير ناعم في الآيفون */
+        white-space: nowrap;
+        /* يمنع نزول النص لسطر جديد */
+    }
+}
+
+nav ul.show {
+    display: flex;
+}
+
+    nav ul.show {
+        display: flex;
+    }
+
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    /* يخلي العنصر يطلع فوق */
+    position: relative;
+    top: -50px;
+    /* غيّر الرقم حسب المسافة اللي عايزها */
+    /* يخليه أقصى اليمين */
+    margin-left: auto;
+    margin-right: 0;
+}
+
+h1 {
+    text-align: right;
+    color: rgb(9, 64, 132);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+
+.hero {
+    text-align: right;
+    padding: 4rem 0;
+}
+
+.hero h1 {
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+}
+
+.hero p {
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+}
+.buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: right;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: transparent;
+    color: #e1e3ec;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(24, 8, 244, 0.548);
+}
+
+.btn:hover {
+    background: white;
+    color: #667eea;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: none;
+    box-shadow: #0051ff;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #667eea;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px;
+    border-color: #01040f;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(7, 29, 224, 0.906);
+    text-align: center;
+    width: 280px;
+    box-sizing: border-box;
+    /* للتأكد من أن الحشو لا يزيد العرض */
+    /* تأثير انتقالي سلس لتأثيرات المرور */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* أنيميشن الظهور الأولي */
+    animation: fadeInScale 0.5s ease-out;
+}
+
+/* تأثير التكبير وزيادة الظل عند المرور */
+.card:hover {
+    transform: translateY(-5px);
+    /* رفع البطاقة قليلاً */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 10px 0 5px 0;
+    color: var(--text-dark);
+}
+
+.card p {
+    margin: 0;
+    color: #0a0101;
+    font-size: 0.9em;
+    height: 3.6em;
+    /* ارتفاع محدد لوصف الدورة */
+    overflow: hidden;
+}
+
+.card button {
+    background: transparent;
+        color: #171320;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(24, 8, 244, 0.548);
+    /* تأثير انتقالي سلس لتغيير اللون */
+    transition: background-color 0.5s ease; 
+}
+
+/* تأثير تغيير اللون عند المرور على الزر */
+.card button:hover {
+    color: #c6c1ec;
+        background-color: rgb(37, 18, 45);
+        transform: translateY(-8px) scale(1.1);
+        box-shadow: 0 10px 20px rgba(9, 12, 215, 0.3);
+}
+
+/* تعريف أنيميشن الظهور */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+table {
+    width: 100%;
+    background-color: #01040f;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(239, 11, 11, 0.2);
+    margin-top: 2rem;
+}
+
+thead {
+    background: #667eea;
+    color: white;
+}
+
+th,
+td {
+    color: #00ffcc;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+td:hover {
+    color: #732134;
+}
+
+tbody tr {
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+    background: #f8f9ff;
+    transform: scale(1.02);
+}
+
+.sds {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgb(11, 22, 239);
+    max-width: 600px;
+    margin: 2rem auto;
+    direction: ltr;
+    text-align: left;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid #1a424f;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0a30d7;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background: #667eea;
+    color: white;
+    border: 2px solid rgb(40, 55, 132);
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #805ad8;
+    transform: translateY(-2px);
+}
+
+footer {
+    background: #f8f5f5;
+    text-align: center;
+    padding: 30px 20px;
+    color: #0b0b0b;
+    box-shadow: #0051ff;
+}
+
+/* الايقونات */
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+/* النص */
+.footer p {
+    font-size: 14px;
+    color: #201a1a;
+}
+
+@media (max-width: 768px) {
+
+    /* تجعل اللوجو والقائمة فوق بعض بدلاً من جنب بعض */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* تضمن ظهور القائمة وجعلها قابلة للتمرير يميناً ويساراً إذا كانت طويلة */
+    nav ul {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        width: 100%;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    nav ul li {
+        margin: 0 5px;
+    }
+
+    /* تصغير حجم نصوص الترحيب لتناسب شاشة الموبايل */
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    /* إلغاء الإزاحة العلوية السالبة حتى لا يختفي الكلام تحت الهيدر */
+    main {
+        top: 0;
+    }
+}
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    th,
+    td {
+        padding: 0.8rem 0.4rem;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
